@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Canus</name>
+		<update version="0.1.9">
+			<file name="race-Canus.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/core/players-handbook/races/race-halfelf.xml" />
+		</update>
+	</info>
+	<element name="Canus" type="Race" source="Furries" id="ID_RACE_Canus">
+		<description>
+			<p class="flavor">Usually known as "Man's best friend". Most Canus are kept as slaves, pets, or mercenaries for most of their life, but some find freedom from their masters through escaping, good behavior, or kindness. Canus are widely considered inhumane, and therefore don't have human rights, though this may be untrue for certain regions. In regions where they aren't considered human, they are considered "attack dogs", "dog maids", or sometimes even simple "house pets".</p>
+			<p>Canus are humanoids with certain dog-like features. This includes almost always ears and a tail, and rarely furred forearms and hands. The specifics of these traits change with sub-race, or in the harsher side of their heritage, "breeds". Hellhounds have darker furs, and fire seems to burn in their eyes. Servants have white fur nearly all the time, but sometimes a mutation will cause them to have grey hair, their eyes look quite normal. Domestics have brown fur, and usually, have a slightly blank look in their eyes.</p> 
+			<h4>Physical description</h4>
+			<p>Canus are humanoids with certain dog-like features. This includes almost always ears and a tail, and rarely furred forearms and hands. The specifics of these traits change with sub-race, or in the harsher side of their heritage, "breeds". Hellhounds have darker furs, and fire seems to burn in their eyes. Servants have white fur nearly all the time, but sometimes a mutation will cause them to have grey hair, their eyes look quite normal. Domestics have brown fur, and usually, have a slightly blank look in their eyes.</p>
+			<p class="indent">In most parts of the world, though, half-elves are uncommon enough that one might live for years without meeting another. Some half-elves prefer to avoid company altogether, wandering the wilds as trappers, foresters, hunters, or adventurers and visiting civilization only rarely. Like elves, they are driven by the wanderlust that comes of their longevity. Others, in contrast, throw themselves into the thick of society, putting their charisma and social skills to great use in diplomatic roles or as swindlers.</p>
+			<h4>Canus NAMES</h4>
+			<p>Canus names are given by masters and are often very demeaning. Male: Fido, Max, 0Doog, Bork Female: Baby, Lola, Dixie.</p>
+			<h4>Canus TRAITS</h4>
+			<p>Your half-elf character has some qualities in common with elves and some that are unique to half-elves.</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong>Your Constitution score increases by 2</p>
+			<p class="indent"><strong><em>Age.</em></strong>Canus reach maturity around two thirds the rate of humans (12), but live slightly shorter, with the average life expectancy of 70.</p>
+			<p class="indent"><strong><em>Size.</em></strong>Your Size is medium.</p>
+			<p class="indent"><strong><em>Speed.</em></strong>Your base walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Keen Senses.</em></strong>Your sense of hearing and smell are better than most humanoids. You are proficient in the Perception skill.</p>
+			<p class="indent"><strong><em>Natural Digger.</em></strong>You have a burrowing speed of 10 feet.</p>
+			<p class="indent"><strong><em>Part Beast.</em></strong>You gain proficiency in two skills of your choice.</p>
+            <p class="indent"><strong><em>Part Beast.</em></strong>Your claws are natural weapons, which you can use to make unarmed strikes. If you hit with them, you deal slashing damage equal to 1d6 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike.</p>
+			<p class="indent"><strong><em>Languages.</em></strong>You can speak, read, and write Common, and one other language your master spoke.</p>
+		
+        </description>
+		<sheet display="false" />
+		<setters>
+			<set name="names" type="male">Fido, Max, Doog, Bork</set>
+			<set name="names" type="female"> Baby, Lola, Dixie</set>
+			<set name="names-format">{{name}}</set>
+			<set name="height" modifier="2d8">4'9"</set>
+			<set name="weight" modifier="2d4">110 lb.</set>
+		</setters>
+		<rules>
+			<stat name="consititution" value="2" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED,!ID_INTERNAL_GRANTS_DRAGONMARK"/>
+			<select type="Racial Trait" name="Ability Score Increase (Canus)" supports="Canus" number="2" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED,!ID_INTERNAL_GRANTS_DRAGONMARK"/>
+			<stat name="innate speed" value="30" bonus="base"/>
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" />
+			<select type="Language" name="Language (Canus)" supports="Standard||Exotic" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED"/>>
+		</rules>
+	</element>
+	<element name="Keen Sense" type="Racial Trait" source="Furries" id="ID_RACIAL_TRAIT_CANUS_KEEN_SENSE">
+		<description>
+			<p>Your sense of hearing and smell are better than most humanoids. You are proficient in the Perception skill.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on saving throws against being charmed, and magic can’t put you to sleep.</description>
+		</sheet>
+	</element>
+	<element name="Natural Digger" type="Racial Trait" source="Furries" id="ID_RACIAL_TRAIT_NATURAL_DIGGER">
+		<description>
+			<p>You have a burrowing speed of 10 feet.</p>
+		</description>
+		<sheet display="true"/>
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency (Canus)" supports="Skill" number="2" />
+		</rules>
+	</element>
+
+	<element name="Ability Score Increase (Constitution)" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_HALFELF_CONSTITUTION">
+		<compendium display="false" />
+		<supports>Canus</supports>
+		<description>
+			<p>Your Constitution score increases by 2.</p>
+		</description>
+		<rules>
+			<stat name="constitution" value="2"/>
+		</rules>
+	</element>
+	</element>
+</elements>
